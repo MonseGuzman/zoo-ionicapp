@@ -1,0 +1,39 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-title> Sonidito App </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+    <!-- lista avatars -->
+    <ion-list>
+
+        <ion-item-sliding *ngFor="let animal of animales let i = index">
+            <!-- items -->
+            <ion-item (click)="reproducir(animal)">
+
+                <!-- icon -->
+                <ion-avatar item-start>
+                    <img [src]="animal.imagen">
+                </ion-avatar>
+                <!-- title -->
+                <h2>{{animal.nombre}}</h2>
+
+                <ion-icon *ngIf="!animal.reproduciendo" name="play" item-right></ion-icon>
+                <ion-icon *ngIf="animal.reproduciendo" name="pause" item-right></ion-icon>
+            </ion-item>
+
+            <!-- options -->
+            <ion-item-options side="right">
+                <button ion-button color="danger" (click)="borrar(i)">
+                <ion-icon name="trash"></ion-icon>
+                Borrar
+              </button>
+            </ion-item-options>
+        </ion-item-sliding>
+
+    </ion-list>
+
+
+</ion-content>
