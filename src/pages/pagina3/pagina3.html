@@ -1,0 +1,18 @@
+<ion-header>
+
+    <ion-navbar color="primary">
+        <ion-title> {{ animal.nombre }}</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <h1>hola soy un {{ animal.nombre }}</h1>
+    <img [src]="animal.foto">
+
+    <button ion-button block color="primary" (click)="irAtras()">Ir atrás evento</button>
+    <button ion-button block color="secondary" (click)="irRoot()">Ir atrás Root</button>
+
+    <button ion-button block color="danger" navPop>Ir atrás HTML</button>
+</ion-content>
