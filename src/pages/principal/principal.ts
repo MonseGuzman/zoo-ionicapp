@@ -1,21 +1,24 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { Pagina2Page } from '../index.pages';
+import { NavController, MenuController } from 'ionic-angular';
+import { HomePage, Pagina2Page } from '../index.pages';
 
-@IonicPage()
 @Component({
   selector: 'page-principal',
   templateUrl: 'principal.html',
 })
 export class PrincipalPage {
 
-  pagina2: any = Pagina2Page;
+  detalles: any = Pagina2Page;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, private menuCtrl: MenuController) {
   }
 
   cambiarPagina(){
-    this.navCtrl.push (Pagina2Page);
+    this.navCtrl.push (HomePage);
+  }
+
+  openMenu(){
+    this.menuCtrl.toggle();
   }
 
 }
