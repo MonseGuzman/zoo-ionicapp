@@ -12,7 +12,7 @@ import { Pagina3Page, Pagina2Page, ModalPage, TabsPage, Ajustes2Page, PrincipalP
 @NgModule({
   declarations: [
     MyApp,
-    //HomePage
+    HomePage,
     Pagina3Page, 
     Pagina2Page, 
     ModalPage, 
@@ -23,12 +23,12 @@ import { Pagina3Page, Pagina2Page, ModalPage, TabsPage, Ajustes2Page, PrincipalP
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp, { backButtonText: 'Atrás'} )
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    //HomePage,
+    HomePage,
     Pagina3Page, 
     Pagina2Page, 
     ModalPage, 
